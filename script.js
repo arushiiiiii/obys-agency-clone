@@ -1,5 +1,6 @@
-var tl = gsap.timeline();
-tl.from(".line h1, .line h2", {
+function loadingAnimation() {
+    var tl = gsap.timeline();
+tl.from(".line h1", {
     y:100,
     stagger:0.17,
     duration:0.5,
@@ -41,4 +42,12 @@ tl.from("#page1", {
 })
 tl.to("#loader", {
     dispaly:"none",
+})
+}
+loadingAnimation();
+document.addEventListener("mousemove", function(dets){
+    gsap.to("#cursor", {
+        left:dets.x,
+        top:dets.y,
+    })
 })
