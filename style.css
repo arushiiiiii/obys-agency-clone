@@ -15,7 +15,7 @@ html,body{
     width: 2.8vw;
     border-radius: 50%;
     /* background-color: #fff; */
-    border: 1px solid rgb(178, 177, 177);
+    border: 1px solid rgb(196, 195, 195);
     position: fixed;
     z-index: 9999;
     mix-blend-mode: difference;
@@ -138,12 +138,18 @@ html,body{
 }
 #nav-part2 h4{
     font-size: 1vw;
+    /* position: relative;
+    display: inline-block; */
 }
 
 .center{
     /* background-color: rgb(79, 70, 59); */
     /* width: 75%; */
     margin-left: 28%;
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 .center:nth-child(2) {
     margin-top: 17vh;
@@ -153,4 +159,16 @@ html,body{
     text-transform: uppercase;
     line-height: 7.5vw;
     font-weight: 520;
+}
+.center h2{
+    font-size: 7.3vw;
+    text-transform: uppercase;
+    line-height: 7.5vw;
+    font-weight: 520;
+    /* text-decoration: underline; */
+}
+.center h2:hover{
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    font-weight: 400;
 }

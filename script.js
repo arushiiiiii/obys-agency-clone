@@ -27,27 +27,42 @@ var counter = setInterval(function(){
 })
 tl.to(".line h2", {
     animationName: "anime",
-    opactiy: 1,
+    opacity: 1,
 })
 tl.to("#loader", {
     opacity:0,
-    delay:2,
+    delay: 2,
     duration:0.8,
 })
 tl.from("#page1", {
     y:1200,
     opacity:1,
     delay:0.2,
-    ease:Power4
+    ease:"power4.out",
+    duration: 0.8
 })
 tl.to("#loader", {
-    dispaly:"none",
-})
+    display:"none",
+}, "<")
+tl.from("#center1 h1, #center2 h1, #center3 h2, #center4 h1", {
+    y: 100,
+    stagger: 0.17,
+    duration: 0.6,
+}, "<0.2")
+tl.from("#nav", {
+    opacity: 0,
+}, "<0.4")
 }
-loadingAnimation();
-document.addEventListener("mousemove", function(dets){
+
+function cursorAnimation(){
+    Shery.makeMagnet("#nav-part2 h4");
+    document.addEventListener("mousemove", function(dets){
     gsap.to("#cursor", {
         left:dets.x,
         top:dets.y,
-    })
-})
+    });
+});
+}
+
+loadingAnimation();
+cursorAnimation();
