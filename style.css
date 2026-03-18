@@ -24,6 +24,13 @@ body{
     z-index: 9999;
     mix-blend-mode: difference;
     transform: translate(-50%, -50%);
+    pointer-events:none;    /* cursor animation sahi se chalane ke liy e*/
+}
+.mouseFollower{
+    border: 1px solid rgb(196, 195, 195);
+    background-color: rgb(255, 255, 255);
+    scale: 2;
+    mix-blend-mode: difference;
 }
 #loader{
     height: 100%;
@@ -120,6 +127,7 @@ body{
 #main{
     position: relative;
     background-color: #111;
+    overflow:hidden;
 }
 
 #page1{
@@ -193,9 +201,10 @@ body{
 
 
 #page2 {
+    /* background-color: #3F7DF4; */
     height: 100vh;
     width: 100%;
-    padding-top: 15vh;
+    padding-top: 10vh;
     position: relative;
     background-color: #171717;
 }
@@ -205,7 +214,10 @@ body{
     width: 72vw;
     position: relative;
     left: 28vw;
+    /* background-color: #c55916; */
     background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+    background-size: cover;
+    background-position: center;
 }
 #video-container img{
     position: absolute;
@@ -218,6 +230,7 @@ body{
     height: 100%;
     width: 100%;
     object-fit: cover;
+    opacity: 0;
 }
 #video-cursor{
     background-color: #FFA63D;
@@ -225,7 +238,7 @@ body{
     width: 10vw;
     border-radius: 50%;
     position: absolute;
-    top: -11%;
+    top: -15%;
     left: 70%;
     display: flex;
     align-items: center;
@@ -241,6 +254,129 @@ body{
     width: 100%;
     background-color: #171717;
     position: relative;
+    padding: 7vh 2vw;
+}
+#page3 h1{
+    font-size: 7.3vw;
+    text-transform: uppercase;
+    font-weight: 580;
+    position: relative;
+    margin-left: 28%;
+}
+#page3 h1::before{
+    content: "02";
+    position: absolute;
+    font-size: 3vw;
+    font-family: "silk serif";
+    font-weight: 100;
+    left: -15%;
+    top: 8%;
+}
+#img-div-container{
+    /* background-color: antiquewhite; */
+    padding: 1vw;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 10vw;
+}
+.image-div{
+    height: 40vw;
+    width: 30vw;
+    /* background-color: aquamarine; */
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-left: 2vw;
+    margin-top: 2vw;
+}
+.image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.image-div:nth-child(1) {
+    height: 30vw;
+    width: 24vw;
+}
+.page3-circle1{
+    height: 23vw;
+    width: 23vw;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 23vh;
+    margin-left: 10vw;
+    position: relative;
+}
+.page3-circle1 svg{
+    height: 30%;
+}
+.page3-circle2{
+    height: 23vw;
+    width: 23vw;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* margin-top: 23vh; */
+    /* margin-left: 10vw; */
+}
+.page3-circle2 svg{
+    height: 30%;
+    rotate: -45deg;
+}
+.circle-in{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0;
+    border-radius: 50%;
+    padding: 1.2vw;
+    transition: all ease 0.3s;
+}
+.circle-in p{
+    font-size: 1vw;
+    color: #0B0B0B;
+    font-weight: 700;
+    scale: 0;
+    transition: all ease 0.3s;
+    transition-delay: 0.3s;
+    opacity: 0;
+}
+.page3-circle1:hover .circle-in{
+    scale: 1;
+}
+.page3-circle1:hover p{
+    scale: 1;
+    opacity: 1;
+}
+.page3-circle1:hover .circle-in{
+    scale: 1;
+}
+.page3-circle1:hover p{
+    scale: 1;
+    opacity: 1;
+}
+.page3-circle2:hover .circle-in{
+    scale: 1;
+}
+.page3-circle2:hover p{
+    scale: 1;
+    opacity: 1;
 }
 
 #page4{
@@ -446,4 +582,20 @@ body{
     font-weight: 500;
     font-size: 1vw;
     margin-left: 28%;
+}
+._canvas_container{
+    z-index: 999999 !important;
+    pointer-events: none;
+}
+#flag{
+    height: 28vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+#center3{
+    z-index: 9999;
+    position: relative;
 }
